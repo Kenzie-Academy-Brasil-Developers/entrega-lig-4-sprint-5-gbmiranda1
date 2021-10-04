@@ -40,60 +40,62 @@ function Celda(i, str){
     this.celda.className = str;
 }
 
-function Fila(i, str){
-    this.fila = document.createElement("div");
-    this.fila.id = String.fromCharCode(97 + i);
-    this.fila.className = str;
+function Coluna(i, str){
+    this.coluna = document.createElement("div");
+    this.coluna.id = String.fromCharCode(97 + i);
+    this.coluna.className = str;
 }
 
-const filas = [];
+const colunas = [];
 
-function criaFilas(n, str, array) {
+function criaColunas(n, str, array) {
     for (let i = 0; i < n; i++) {
-        array[i] = new Fila(i, str);
+        array[i] = new Coluna(i, str);
     }
     return array;
 }
 
-criaFilas(6, "fila", filas);
+criaColunas(7, "coluna", colunas);
 
-function dibujaFilas(array, tag) {
+function dibujaColunas(array, tag) {
     for (let i = 0; i < array.length; i++) {
         const element = array[i];
-        tag.appendChild(element.fila);
+        tag.appendChild(element.coluna);
     }
 }
 
-dibujaFilas(filas, grade);
+dibujaColunas(colunas, grade);
 
-const fila01 = [];
-const fila02 = [];
-const fila03 = [];
-const fila04 = [];
-const fila05 = [];
-const fila06 = [];
-
+const coluna01 = [];
+const coluna02 = [];
+const coluna03 = [];
+const coluna04 = [];
+const coluna05 = [];
+const coluna06 = [];
+const coluna07 = [];
 
 function criaCeldas(n, str, array) {
-    for (let i = n; i < n + 7; i++) {
+    for (let i = n; i < n + 6; i++) {
         array[i - n] = new Celda(i, str);
     }
     return array;
 }
 
-criaCeldas(0, "celda", fila01);
-criaCeldas(7, "celda", fila02);
-criaCeldas(14, "celda", fila03);
-criaCeldas(21, "celda", fila04);
-criaCeldas(28, "celda", fila05);
-criaCeldas(35, "celda", fila06);
+criaCeldas(0, "celda", coluna01);
+criaCeldas(6, "celda", coluna02);
+criaCeldas(12, "celda", coluna03);
+criaCeldas(18, "celda", coluna04);
+criaCeldas(24, "celda", coluna05);
+criaCeldas(30, "celda", coluna06);
+criaCeldas(36, "celda", coluna07);
 
-const filaA = document.getElementById("a");
-const filaB = document.getElementById("b");
-const filaC = document.getElementById("c");
-const filaD = document.getElementById("d");
-const filaE = document.getElementById("e");
-const filaF = document.getElementById("f");
+const colunaA = document.getElementById("a");
+const colunaB = document.getElementById("b");
+const colunaC = document.getElementById("c");
+const colunaD = document.getElementById("d");
+const colunaE = document.getElementById("e");
+const colunaF = document.getElementById("f");
+const colunaG = document.getElementById("g");
 
 function dibujaCeldas(array, tag) {
     for (let i = 0; i < array.length; i++) {
@@ -103,9 +105,10 @@ function dibujaCeldas(array, tag) {
 }
 
 
-dibujaCeldas(fila01, filaA);
-dibujaCeldas(fila02, filaB);
-dibujaCeldas(fila03, filaC);
-dibujaCeldas(fila04, filaD);
-dibujaCeldas(fila05, filaE);
-dibujaCeldas(fila06, filaF);
+dibujaCeldas(coluna01, colunaA);
+dibujaCeldas(coluna02, colunaB);
+dibujaCeldas(coluna03, colunaC);
+dibujaCeldas(coluna04, colunaD);
+dibujaCeldas(coluna05, colunaE);
+dibujaCeldas(coluna06, colunaF);
+dibujaCeldas(coluna07, colunaG);

@@ -37,17 +37,18 @@ main {
 }
 
 #grade {
-    width: 100%;
-    height: 50%;
-}
-
-.fila {
     width: 280px;
-    height: 40px;
+    height: 50%;
     margin: auto;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
+}
+
+.coluna {
+    width: 40px;
+    height: 240px;
+    margin: auto;
 }
 
 .celda {
@@ -85,9 +86,21 @@ footer {
         width: 80%;
     }
 
-    .fila {
-        width: 560px;
-        height: 80px;
+    #vitoria {
+        height: 15%;
+    }
+
+    #grade {
+        height: 70%;
+    }
+
+    #datos {
+        height: 15%;
+    }
+
+    .coluna {
+        width: 80px;
+        height: 480px;
     }
     
     .celda {
