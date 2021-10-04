@@ -1,0 +1,98 @@
+body, header, footer, main, section, div {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: #4E69C1;
+}
+
+header {
+    width: 100%;
+    height: 12vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #C8D8F7;
+    color: #294987;
+}
+
+main {
+    width: 320px;
+    height: 80vh;
+    margin: auto;
+    background-color: #D6DEED;
+}
+
+#vitoria {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#grade {
+    width: 100%;
+    height: 50%;
+}
+
+.fila {
+    width: 280px;
+    height: 40px;
+    margin: auto;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.celda {
+    width: 40px;
+    height: 40px;
+    margin: auto;
+    border: 1px solid black;
+}
+
+#datos {
+    width: 100%;
+    height: 30%;
+}
+
+footer {
+    width: 100%;
+    height: 8vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #C8D8F7;
+    color: #294987;
+}
+
+@media (min-width : 769px){
+    h1 {
+        font-size: 3em;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    main {
+        width: 80%;
+    }
+
+    .fila {
+        width: 560px;
+        height: 80px;
+    }
+    
+    .celda {
+        width: 80px;
+        height: 80px;
+    }
+    
+}
