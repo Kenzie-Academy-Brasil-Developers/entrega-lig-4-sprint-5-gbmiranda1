@@ -65,6 +65,10 @@ function dibujaColunas(array, tag) {
     }
 }
 
+function teste() {
+    console.log("Oi")
+}
+
 dibujaColunas(colunas, grade);
 
 const coluna01 = [];
