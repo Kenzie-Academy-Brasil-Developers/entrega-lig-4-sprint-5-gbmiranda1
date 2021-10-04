@@ -34,13 +34,13 @@ const datos = document.createElement("section");
 datos.id = "datos";
 principal.appendChild(datos);
 
-function Celda(i, str){
+function Celda(i, str) {
     this.celda = document.createElement("div");
     this.celda.id = i + 1;
     this.celda.className = str;
 }
 
-function Fila(i, str){
+function Fila(i, str) {
     this.fila = document.createElement("div");
     this.fila.id = String.fromCharCode(97 + i);
     this.fila.className = str;
