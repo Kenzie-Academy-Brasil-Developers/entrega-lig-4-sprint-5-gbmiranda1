@@ -1,22 +1,34 @@
-/* VERIFICACAO HORIZONTAL */
-function horizontal() {
-    for (let i = 0; i < 6; i++) {
-        for (let x = 0; x < 7; x++) {
-            if (matrizJogo[i][x] === "v" && matrizJogo[i + 1][x] === "v" && matrizJogo[i + 2][x] === "v" && matrizJogo[i - 3][x] === "v") {
-                divResultado.appendChild(vitoriaVermelho)
+/* VERIFICACAO HORIZONTAL*/
+
+function verificarVitoriaHorizontal(i, j, vORp) {
+    const elemento = matrizJogo[i];
+    if (j >= 0 && j < 7) {
+        if (vORp === elemento[j + 1] && vORp === elemento[j + 2] && vORp === elemento[j + 3]) {
+            mostrarPopUp("telaVitoria", "Ganhou na Horizontal");
+            return true;
+        }
+        if (j >= 1) {
+            if (vORp === elemento[j - 1] && vORp === elemento[j + 1] && vORp === elemento[j + 2]) {
+                mostrarPopUp("telaVitoria", "Ganhou na Horizontal");
+                return true;
             }
-            if (matrizJogo[i][x] === "p" && matrizJogo[i + 1][x] === "p" && matrizJogo[i + 2][x] === "p" && matrizJogo[i - 3][x] === "p") {
-                divResultado.appendChild(vitoriaPreto)
-            }
-            if (matrizJogo[i][x] === "v" && matrizJogo[i - 1][x] === "v" && matrizJogo[i - 2][x] === "v" && matrizJogo[i - 3][x] === "v") {
-                divResultado.appendChild(vitoriaVermelho)
-            }
-            if (matrizJogo[i][x] === "p" && matrizJogo[i - 1][x] === "p" && matrizJogo[i - 2][x] === "p" && matrizJogo[i - 3][x] === "p") {
-                divResultado.appendChild(vitoriaPreto)
+            if (j >= 2) {
+                if (vORp === elemento[j - 2] && vORp === elemento[j - 1] && vORp === elemento[j + 1]) {
+                    mostrarPopUp("telaVitoria", "Ganhou na Horizontal");
+                    return true;
+                }
+                if (j >= 3) {
+                    if (vORp === elemento[j - 3] && vORp === elemento[j - 2] && vORp === elemento[j - 1]) {
+                        mostrarPopUp("telaVitoria", "Ganhou na Horizontal");
+                        return true;
+                    }
+                }
             }
         }
     }
 }
+
+
 
 /* VERIFICACAO VERTICAL */
 function verificarVitoriaVertical(i, j, vORp) {
@@ -84,10 +96,11 @@ function verificarVitoriaDiagonal(i, j, vORp) {
             mostrarPopUp("telaVitoria", "Ganhou na Horizontal")
             console.log("sim 7")
             return true
+
+
         }
     }
 }
-
 
 /* VERIFICACAO EMPATE */
 function verificarEmpate() {
@@ -103,7 +116,7 @@ function verificarEmpate() {
 }
 
 function verificaVitoria(i, j, vORp) { //linha, coluna, o ultimo parametro é dizendo se o elemento que vc está verificando é vermelho ou preto
-    if (verificarVitoriaDiagonal(i, j, vORp) || verificarVitoriaVertical(i, j, vORp) || verificarEmpate()) {
+    if (verificarVitoriaDiagonal(i, j, vORp) || verificarVitoriaVertical(i, j, vORp) || verificarVitoriaHorizontal(i, j, vORp) || verificarEmpate()) {
         return true
     }
 }

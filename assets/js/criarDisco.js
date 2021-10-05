@@ -44,7 +44,6 @@ function adicionarDiscoAColuna(currentTarget, disco) {
     let status = false
     for (let i = currentTarget.children.length - 1; i >= 0; i--) {
         if (currentTarget.children[i].children.length == 0) {
-
             if (jogador) {
                 matrizJogo[i][dicionario[currentTarget.id]] = "v"
                 if (verificaVitoria(i, dicionario[currentTarget.id], "v")) {
