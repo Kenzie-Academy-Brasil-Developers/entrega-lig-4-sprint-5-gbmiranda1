@@ -93,7 +93,7 @@ function verificarVitoriaDiagonal(i, j, vORp) {
     }
     if ((i - 1) >= 0 && (j + 1) < 7 && (i + 2) < 6 && (j - 2) >= 0) {
         if (matrizJogo[i - 1][j + 1] == vORp && matrizJogo[i + 1][j - 1] == vORp && matrizJogo[i + 2][j - 2] == vORp) {
-            mostrarPopUp("telaVitoria", "Ganhou na Horizontal")
+
             console.log("sim 7")
             return true
 
@@ -111,7 +111,7 @@ function verificarEmpate() {
             }
         }
     }
-    divResultado.appendChild(empate)
+    mostrarPopUp("telaVitoria", "EMPATOU")
     return true
 }
 
