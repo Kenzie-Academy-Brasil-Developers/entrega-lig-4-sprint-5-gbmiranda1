@@ -34,7 +34,7 @@ function criarDisco(evt) {
         adicionarDiscoAColuna(evt.currentTarget, disco)
         jogador = true
     }
-
+    
 }
 
 function adicionarDiscoAColuna(currentTarget, disco) {
