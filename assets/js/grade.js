@@ -18,13 +18,13 @@ const pieLegenda = document.createElement("p");
 pieLegenda.innerText = "galubo q1 sprint 5";
 pie.appendChild(pieLegenda);
 
-const vitoria = document.createElement("section");
-vitoria.id = "vitoria";
-principal.appendChild(vitoria)
+const vezJogador = document.createElement("section");
+vezJogador.id = "vezJogador";
+principal.appendChild(vezJogador)
 
 const mensaje = document.createElement("h2");
-vitoria.appendChild(mensaje);
-mensaje.innerText = "Você venceu!"
+vezJogador.appendChild(mensaje);
+mensaje.innerText = "Jogador VERMELHO"
 
 const grade = document.createElement("section");
 grade.id = "grade";

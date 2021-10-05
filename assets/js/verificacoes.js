@@ -1,14 +1,3 @@
-const divResultado = document.createElement("div")
-const vitoriaPreto = document.createElement("p")
-vitoriaPreto.innerText = "Vitoria do jogador Preto"
-const vitoriaVermelho = document.createElement("p")
-vitoriaVermelho.innerText = "Vitoria do jogador Vermelho"
-const empate = document.createElement("p")
-empate.innerText = "O jogo terminou em empate"
-const body = document.querySelector("body")
-body.appendChild(divResultado)
-
-
 /* VERIFICACAO HORIZONTAL */
 function horizontal() {
     for (let i = 0; i < 6; i++) {
