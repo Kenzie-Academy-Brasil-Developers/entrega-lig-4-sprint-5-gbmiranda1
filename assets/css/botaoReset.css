@@ -1,0 +1,15 @@
+.reset {
+    border: 1px solid black;
+    position: absolute;
+    right: 43vw;
+    bottom: 20vh;
+    cursor: pointer;
+}
+
+@media (min-width: 769px) {
+    .reset {
+        bottom: 10vh;
+        right: 48vw;
+        font-size: 20px;
+    }
+}
