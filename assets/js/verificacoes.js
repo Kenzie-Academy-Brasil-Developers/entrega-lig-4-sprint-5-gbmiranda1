@@ -11,8 +11,8 @@ body.appendChild(divResultado)
 
 /* VERIFICACAO HORIZONTAL */
 function horizontal() {
-    for (let i = 0; i < 7; i++) {
-        for (let x = 0; x < 6; x++) {
+    for (let i = 0; i < 6; i++) {
+        for (let x = 0; x < 7; x++) {
             if (matrizJogo[i][x] === "v" && matrizJogo[i + 1][x] === "v" && matrizJogo[i + 2][x] === "v" && matrizJogo[i - 3][x] === "v") {
                 divResultado.appendChild(vitoriaVermelho)
             }
@@ -31,8 +31,8 @@ function horizontal() {
 
 /* VERIFICACAO VERTICAL */
 function vertical() {
-    for (let i = 0; i < 7; i++) {
-        for (let x = 0; x < 6; x++) {
+    for (let i = 0; i < 6; i++) {
+        for (let x = 0; x < 7; x++) {
             if (matrizJogo[i][x] === "v" && matrizJogo[i][x + 1] === "v" && matrizJogo[i][x + 2] === "v" && matrizJogo[i][x + 3] === "v") {
                 divResultado.appendChild(vitoriaVermelho)
             }
@@ -51,8 +51,8 @@ function vertical() {
 
 /* VERIFICACAO DIAGONAL VITORIA VERMELHO */
 function diagonalVermelha() {
-    for (let i = 0; i < 7; i++) {
-        for (let x = 0; x < 6; x++) {
+    for (let i = 0; i < 6; i++) {
+        for (let x = 0; x < 7; x++) {
             //direita baixo
             if (matrizJogo[i][x] === "v" && matrizJogo[i + 1][x + 1] === "v" && matrizJogo[i + 2][x + 2] === "v" && matrizJogo[i + 3][x + 3] === "v") {
                 divResultado.appendChild(vitoriaVermelho)
@@ -76,8 +76,8 @@ function diagonalVermelha() {
 
 /* VERIFICACAO DIAGONAL VITORIA PRETO */
 function diagonalPreta() {
-    for (let i = 0; i < 7; i++) {
-        for (let x = 0; x < 6; x++) {
+    for (let i = 0; i < 6; i++) {
+        for (let x = 0; x < 7; x++) {
             //direita baixo
             if (matrizJogo[i][x] === "p" && matrizJogo[i + 1][x + 1] === "p" && matrizJogo[i + 2][x + 2] === "p" && matrizJogo[i + 3][x + 3] === "p") {
                 divResultado.appendChild(vitoriaPreto)
@@ -101,8 +101,8 @@ function diagonalPreta() {
 
 /* VERIFICACAO EMPATE */
 function verificarEmpate() {
-    for (let i = 0; i < 7; i++) {
-        for (let x = 0; x < 6; x++) {
+    for (let i = 0; i < 6; i++) {
+        for (let x = 0; x < 7; x++) {
             if (matrizJogo[i][x] == "") {
                 return false
             }
