@@ -38,20 +38,22 @@ function criarDisco(evt) {
 }
 
 function adicionarDiscoAColuna(currentTarget, disco) {
+
     for (let i = currentTarget.children.length - 1; i >= 0; i--) {
         console.log("oi")
         if (currentTarget.children[i].children.length == 0) {
             console.log(dicionario[currentTarget.id], i)
             if (jogador) {
                 matrizJogo[i][dicionario[currentTarget.id]] = "v"
+                verificaVitoria(i, dicionario[currentTarget.id], "v")
             } else {
                 matrizJogo[i][dicionario[currentTarget.id]] = "p"
+                verificaVitoria(i, dicionario[currentTarget.id], "p")
             }
             currentTarget.children[i].appendChild(disco)
             break;
         }
     }
-    verificaVitoria()
     console.log(matrizJogo)
 }
 
@@ -62,7 +64,6 @@ function criarMatriz() {
             matrizJogo[i].push("")
         }
     }
-    console.log(matrizJogo)
 }
 
 function reiniciar() {

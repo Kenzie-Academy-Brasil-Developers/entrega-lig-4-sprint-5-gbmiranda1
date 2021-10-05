@@ -112,7 +112,7 @@ function verificarEmpate() {
     return true
 }
 
-function verificaVitoria() {
+function verificaVitoria(i, j, vORp) { //linha, coluna, o ultimo parametro é dizendo se o elemento que vc está verificando é vermelho ou preto
     verificarEmpate()
     diagonalPreta()
     diagonalVermelha()
