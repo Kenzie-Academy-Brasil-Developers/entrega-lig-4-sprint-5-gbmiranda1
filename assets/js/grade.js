@@ -61,13 +61,10 @@ function dibujaColunas(array, tag) {
     for (let i = 0; i < array.length; i++) {
         const element = array[i];
         tag.appendChild(element.coluna);
-        element.coluna.addEventListener("click", teste)
+        element.coluna.addEventListener("click", criarDisco)
     }
 }
 
-function teste() {
-    console.log("Oi")
-}
 
 dibujaColunas(colunas, grade);
 

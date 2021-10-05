@@ -1,4 +1,9 @@
-body, header, footer, main, section, div {
+body,
+header,
+footer,
+main,
+section,
+div {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -56,11 +61,28 @@ main {
     height: 40px;
     margin: auto;
     border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #datos {
     width: 100%;
     height: 30%;
+}
+
+.disco-jogador {
+    width: 30px;
+    height: 30px;
+    background-color: red;
+    border-radius: 100%;
+}
+
+.disco-maquina {
+    width: 30px;
+    height: 30px;
+    background-color: black;
+    border-radius: 100%;
 }
 
 footer {
@@ -73,40 +95,40 @@ footer {
     color: #294987;
 }
 
-@media (min-width : 769px){
+@media (min-width: 769px) {
     h1 {
         font-size: 3em;
     }
-
     h2 {
         font-size: 2em;
     }
-
     main {
         width: 80%;
     }
-
     #vitoria {
         height: 15%;
     }
-
     #grade {
         width: 560px;
         height: 70%;
     }
-
     #datos {
         height: 15%;
     }
-
     .coluna {
         width: 80px;
         height: 480px;
     }
-    
     .celda {
         width: 80px;
         height: 80px;
     }
-    
+    .disco-jogador {
+        width: 70px;
+        height: 70px;
+    }
+    .disco-maquina {
+        width: 70px;
+        height: 70px;
+    }
 }
