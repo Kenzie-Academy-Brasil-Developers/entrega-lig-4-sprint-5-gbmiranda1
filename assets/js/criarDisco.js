@@ -24,14 +24,17 @@ function criarDisco(evt) {
         return;
     }
     let disco = document.createElement("div")
+    let vez = document.querySelector("#vezJogador").lastElementChild
     disco.classList.add("disco")
     if (jogador) {
         disco.classList.add("disco-jogador")
         adicionarDiscoAColuna(evt.currentTarget, disco)
+        vez.innerText = "Jogador PRETO"
         jogador = false
     } else {
         disco.classList.add("disco-maquina")
         adicionarDiscoAColuna(evt.currentTarget, disco)
+        vez.innerText = "Jogador VERMELHO"
         jogador = true
     }
 
