@@ -2,28 +2,28 @@
 
 function verificarVitoriaHorizontal(i, j, vORp) {
     const elemento = matrizJogo[i];
-    if (j >= 0 && j < 7) {
-        if (vORp === elemento[j + 1] && vORp === elemento[j + 2] && vORp === elemento[j + 3]) {
-            mostrarPopUp("telaVitoria", "Ganhou na Horizontal");
+    if (j + 3 < 7) {
+        if (elemento[j] === vORp && elemento[j + 1] === vORp && elemento[j + 2] === vORp && elemento[j + 3] === vORp) {
+            mostrarPopUp("telaVitoria", "Ganhou na Horizontal1");
             return true;
         }
-        if (j >= 1) {
-            if (vORp === elemento[j - 1] && vORp === elemento[j + 1] && vORp === elemento[j + 2]) {
-                mostrarPopUp("telaVitoria", "Ganhou na Horizontal");
-                return true;
-            }
-            if (j >= 2) {
-                if (vORp === elemento[j - 2] && vORp === elemento[j - 1] && vORp === elemento[j + 1]) {
-                    mostrarPopUp("telaVitoria", "Ganhou na Horizontal");
-                    return true;
-                }
-                if (j >= 3) {
-                    if (vORp === elemento[j - 3] && vORp === elemento[j - 2] && vORp === elemento[j - 1]) {
-                        mostrarPopUp("telaVitoria", "Ganhou na Horizontal");
-                        return true;
-                    }
-                }
-            }
+    }
+    if (j - 1 >= 0 && j + 2 < 7) {
+        if (elemento[j - 1] === vORp && elemento[j] === vORp && elemento[j + 1] === vORp && elemento[j + 2] === vORp) {
+            mostrarPopUp("telaVitoria", "Ganhou na Horizontal2");
+            return true;
+        }
+    }
+    if (j - 2 >= 0 && j + 1 < 7) {
+        if (elemento[j - 2] === vORp && elemento[j - 1] === vORp && elemento[j] === vORp && elemento[j + 1] === vORp) {
+            mostrarPopUp("telaVitoria", "Ganhou na Horizontal3");
+            return true;
+        }
+    }
+    if (j - 3 >= 0) {
+        if (elemento[j] === vORp && elemento[j - 1] === vORp && elemento[j - 2] === vORp && elemento[j - 3] === vORp) {
+            mostrarPopUp("telaVitoria", "Ganhou na Horizontal4");
+            return true;
         }
     }
 }
