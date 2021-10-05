@@ -26,11 +26,11 @@ function criarDisco(evt) {
     let disco = document.createElement("div")
     disco.classList.add("disco")
     if (jogador) {
-        disco.classList.add("v")
+        disco.classList.add("disco-jogador")
         adicionarDiscoAColuna(evt.currentTarget, disco)
         jogador = false
     } else {
-        disco.classList.add("p")
+        disco.classList.add("disco-maquina")
         adicionarDiscoAColuna(evt.currentTarget, disco)
         jogador = true
     }
@@ -41,7 +41,7 @@ function adicionarDiscoAColuna(currentTarget, disco) {
     for (let i = currentTarget.children.length - 1; i >= 0; i--) {
         console.log("oi")
         if (currentTarget.children[i].children.length == 0) {
-            console.log(dicionario[currentTarget.id], i)
+            console.log(i, dicionario[currentTarget.id])
             if (jogador) {
                 matrizJogo[i][dicionario[currentTarget.id]] = "v"
             } else {

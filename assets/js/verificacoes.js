@@ -9,25 +9,91 @@ const body = document.querySelector("body")
 body.appendChild(divResultado)
 
 
-/* VERIFICACAO HORIZONTAL */
-function horizontal() {
-    for (let i = 0; i < 6; i++) {
-        for (let x = 0; x < 7; x++) {
-            if (matrizJogo[i][x] === "v" && matrizJogo[i + 1][x] === "v" && matrizJogo[i + 2][x] === "v" && matrizJogo[i + 3][x] === "v") {
-                divResultado.appendChild(vitoriaVermelho)
-            }
-            if (matrizJogo[i][x] === "p" && matrizJogo[i + 1][x] === "p" && matrizJogo[i + 2][x] === "p" && matrizJogo[i + 3][x] === "p") {
-                divResultado.appendChild(vitoriaPreto)
-            }
-            if (matrizJogo[i][x] === "v" && matrizJogo[i - 1][x] === "v" && matrizJogo[i - 2][x] === "v" && matrizJogo[i - 3][x] === "v") {
-                divResultado.appendChild(vitoriaVermelho)
-            }
-            if (matrizJogo[i][x] === "p" && matrizJogo[i - 1][x] === "p" && matrizJogo[i - 2][x] === "p" && matrizJogo[i - 3][x] === "p") {
-                divResultado.appendChild(vitoriaPreto)
-            }
+/* VERIFICACAO HORIZONTAL*/
+
+
+function horizontalDireita(fila, coluna) {
+    for (let i = coluna; i < coluna + 4; i++) {
+        const elemento = matrizJogo[fila];
+        if (elemento[i] === elemento[i + 1] && elemento[i] === elemento[i + 2] && elemento[i] === elemento[i + 3]) {
+            console.log("temos um vencedor");
+            break;
+        } else {
+            console.log("continue jogando");
+            break;
         }
     }
 }
+
+function horizontal1Direita(fila, coluna) {
+    for (let i = coluna - 1; i < coluna + 3; i++) {
+        const elemento = matrizJogo[fila];
+        if (elemento[i] === elemento[i + 1] && elemento[i] === elemento[i + 2] && elemento[i] === elemento[i + 3]) {
+            console.log("temos um vencedor");
+            break;
+        } else {
+            console.log("continue jogando");
+            break;
+        }
+    }
+}
+
+function horizontal2Direita(fila, coluna) {
+    for (let i = coluna - 2; i < coluna + 2; i++) {
+        const elemento = matrizJogo[fila];
+        if (elemento[i] === elemento[i + 1] && elemento[i] === elemento[i + 2] && elemento[i] === elemento[i + 3]) {
+            console.log("temos um vencedor");
+            break;
+        } else {
+            console.log("continue jogando");
+            break;
+        }
+    }
+}
+
+function horizontal3Direita(fila, coluna) {
+    for (let i = coluna - 3; i < coluna + 1; i++) {
+        const elemento = matrizJogo[fila];
+        if (elemento[i] === elemento[i + 1] && elemento[i] === elemento[i + 2] && elemento[i] === elemento[i + 3]) {
+            console.log("temos um vencedor");
+            break;
+        } else {
+            console.log("continue jogando");
+            break;
+        }
+    }
+}
+
+function horizontal(fila, coluna) {
+    if (coluna === 0) {
+        horizontalDireita(fila,coluna);
+    }
+    if (coluna < 0 && coluna <= 3) {
+        horizontal1Direita(fila, coluna);
+    }
+    if (coluna) {
+        
+    }
+}
+
+// function horizontal() {
+//     for (let i = 0; i < 6; i++) {
+//         for (let x = 0; x < 7; x++) {
+//             if (matrizJogo[i][x] === "v" && matrizJogo[i + 1][x] === "v" && matrizJogo[i + 2][x] === "v" && matrizJogo[i + 3][x] === "v") {
+//                 divResultado.appendChild(vitoriaVermelho)
+//             }
+//             if (matrizJogo[i][x] === "p" && matrizJogo[i + 1][x] === "p" && matrizJogo[i + 2][x] === "p" && matrizJogo[i + 3][x] === "p") {
+//                 divResultado.appendChild(vitoriaPreto)
+//             }
+//             if (matrizJogo[i][x] === "v" && matrizJogo[i - 1][x] === "v" && matrizJogo[i - 2][x] === "v" && matrizJogo[i - 3][x] === "v") {
+//                 divResultado.appendChild(vitoriaVermelho)
+//             }
+//             if (matrizJogo[i][x] === "p" && matrizJogo[i - 1][x] === "p" && matrizJogo[i - 2][x] === "p" && matrizJogo[i - 3][x] === "p") {
+//                 divResultado.appendChild(vitoriaPreto)
+//             }
+//         }
+//     }
+// }
 
 /* VERIFICACAO VERTICAL */
 // function vertical() {
