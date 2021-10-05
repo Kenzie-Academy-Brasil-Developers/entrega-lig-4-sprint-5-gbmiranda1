@@ -34,6 +34,7 @@ function verificarVitoriaVertical(i, j, vORp) {
     if (i + 3 <= 5) {
         if (matrizJogo[i][j] === vORp && matrizJogo[i + 1][j] === vORp && matrizJogo[i + 2][j] === vORp && matrizJogo[i + 3][j] === vORp) {
             mostrarPopUp("telaVitoria", "Ganhou na Vertical")
+            return true
         }
     }
 }
@@ -113,11 +114,7 @@ function verificarEmpate() {
 }
 
 function verificaVitoria(i, j, vORp) { //linha, coluna, o ultimo parametro é dizendo se o elemento que vc está verificando é vermelho ou preto
-    //verificarEmpate()
-    if (verificarVitoriaDiagonal(i, j, vORp)) {
+    if (verificarVitoriaDiagonal(i, j, vORp) || verificarVitoriaVertical(i, j, vORp) || verificarEmpate()) {
         return true
     }
-
-    //horizontal()
-    verificarVitoriaVertical(i,j, vORp)
 }
