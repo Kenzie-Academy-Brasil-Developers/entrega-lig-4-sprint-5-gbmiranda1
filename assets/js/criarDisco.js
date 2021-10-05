@@ -26,11 +26,11 @@ function criarDisco(evt) {
     let disco = document.createElement("div")
     disco.classList.add("disco")
     if (jogador) {
-        disco.classList.add("disco-jogador")
+        disco.classList.add("v")
         adicionarDiscoAColuna(evt.currentTarget, disco)
         jogador = false
     } else {
-        disco.classList.add("disco-maquina")
+        disco.classList.add("p")
         adicionarDiscoAColuna(evt.currentTarget, disco)
         jogador = true
     }
@@ -51,7 +51,7 @@ function adicionarDiscoAColuna(currentTarget, disco) {
             break;
         }
     }
-    verificaVitoria()
+    // verificaVitoria()
     console.log(matrizJogo)
 }
 

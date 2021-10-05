@@ -71,18 +71,18 @@ main {
     height: 30%;
 }
 
-.disco-jogador {
+.v {
     width: 30px;
     height: 30px;
     background-color: red;
-    border-radius: 100%;
+    border-radius: 50%;
 }
 
-.disco-maquina {
+.p {
     width: 30px;
     height: 30px;
     background-color: black;
-    border-radius: 100%;
+    border-radius: 50%;
 }
 
 footer {
@@ -123,11 +123,11 @@ footer {
         width: 80px;
         height: 80px;
     }
-    .disco-jogador {
+    .v {
         width: 70px;
         height: 70px;
     }
-    .disco-maquina {
+    .p {
         width: 70px;
         height: 70px;
     }
