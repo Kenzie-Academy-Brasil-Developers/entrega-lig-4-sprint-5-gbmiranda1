@@ -38,22 +38,29 @@ function criarDisco(evt) {
 }
 
 function adicionarDiscoAColuna(currentTarget, disco) {
-
+    let status = false
     for (let i = currentTarget.children.length - 1; i >= 0; i--) {
         if (currentTarget.children[i].children.length == 0) {
 
             if (jogador) {
                 matrizJogo[i][dicionario[currentTarget.id]] = "v"
-                verificaVitoria(i, dicionario[currentTarget.id], "v")
+                if (verificaVitoria(i, dicionario[currentTarget.id], "v")) {
+                    status = true
+                }
             } else {
                 matrizJogo[i][dicionario[currentTarget.id]] = "p"
-                verificaVitoria(i, dicionario[currentTarget.id], "p")
+                if (verificaVitoria(i, dicionario[currentTarget.id], "p")) {
+                    status = true
+                }
+
             }
             currentTarget.children[i].appendChild(disco)
             break;
         }
     }
-
+    if (status) {
+        reiniciar()
+    }
 }
 
 function criarMatriz() {
