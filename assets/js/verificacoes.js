@@ -5,23 +5,24 @@ const vitoriaVermelho = document.createElement("p")
 vitoriaVermelho.innerText = "Vitoria do jogador Vermelho"
 const empate = document.createElement("p")
 empate.innerText = "O jogo terminou em empate"
+const body = document.querySelector("body")
 body.appendChild(divResultado)
 
 
 /* VERIFICACAO HORIZONTAL */
-function horizontal () {
+function horizontal() {
     for (let i = 0; i < 7; i++) {
-        for(let x = 0; x < 6; x++) {
-            if (matriz[i][x] === "v" && matriz[i + 1][x] === "v" && matriz[i + 2][x] === "v" && matriz[i - 3][x] === "v") {
+        for (let x = 0; x < 6; x++) {
+            if (matrizJogo[i][x] === "v" && matrizJogo[i + 1][x] === "v" && matrizJogo[i + 2][x] === "v" && matrizJogo[i - 3][x] === "v") {
                 divResultado.appendChild(vitoriaVermelho)
             }
-            if (matriz[i][x] === "p" && matriz[i + 1][x] === "p" && matriz[i + 2][x] === "p" && matriz[i - 3][x] === "p") {
+            if (matrizJogo[i][x] === "p" && matrizJogo[i + 1][x] === "p" && matrizJogo[i + 2][x] === "p" && matrizJogo[i - 3][x] === "p") {
                 divResultado.appendChild(vitoriaPreto)
             }
-            if (matriz[i][x] === "v" && matriz[i - 1][x] === "v" && matriz[i - 2][x] === "v" && matriz[i - 3][x] === "v") {
+            if (matrizJogo[i][x] === "v" && matrizJogo[i - 1][x] === "v" && matrizJogo[i - 2][x] === "v" && matrizJogo[i - 3][x] === "v") {
                 divResultado.appendChild(vitoriaVermelho)
             }
-            if (matriz[i][x] === "p" && matriz[i - 1][x] === "p" && matriz[i - 2][x] === "p" && matriz[i - 3][x] === "p") {
+            if (matrizJogo[i][x] === "p" && matrizJogo[i - 1][x] === "p" && matrizJogo[i - 2][x] === "p" && matrizJogo[i - 3][x] === "p") {
                 divResultado.appendChild(vitoriaPreto)
             }
         }
@@ -29,19 +30,19 @@ function horizontal () {
 }
 
 /* VERIFICACAO VERTICAL */
-function vertical () {
+function vertical() {
     for (let i = 0; i < 7; i++) {
-        for(let x = 0; x < 6; x++) {
-            if (matriz[i][x] === "v" && matriz[i][x + 1] === "v" && matriz[i][x + 2] === "v" && matriz[i][x + 3] === "v") {
+        for (let x = 0; x < 6; x++) {
+            if (matrizJogo[i][x] === "v" && matrizJogo[i][x + 1] === "v" && matrizJogo[i][x + 2] === "v" && matrizJogo[i][x + 3] === "v") {
                 divResultado.appendChild(vitoriaVermelho)
             }
-            if (matriz[i][x] === "v" && matriz[i][x - 1] === "v" && matriz[i][x - 2] === "v" && matriz[i][x - 3] === "v") {
+            if (matrizJogo[i][x] === "v" && matrizJogo[i][x - 1] === "v" && matrizJogo[i][x - 2] === "v" && matrizJogo[i][x - 3] === "v") {
                 divResultado.appendChild(vitoriaVermelho)
             }
-            if (matriz[i][x] === "p" && matriz[i][x - 1] === "p" && matriz[i][x - 2] === "p" && matriz[i][x - 3] === "p") {
+            if (matrizJogo[i][x] === "p" && matrizJogo[i][x - 1] === "p" && matrizJogo[i][x - 2] === "p" && matrizJogo[i][x - 3] === "p") {
                 divResultado.appendChild(vitoriaPreto)
             }
-            if (matriz[i][x] === "p" && matriz[i][x - 1] === "p" && matriz[i][x - 2] === "p" && matriz[i][x - 3] === "p") {
+            if (matrizJogo[i][x] === "p" && matrizJogo[i][x - 1] === "p" && matrizJogo[i][x - 2] === "p" && matrizJogo[i][x - 3] === "p") {
                 divResultado.appendChild(vitoriaPreto)
             }
         }
@@ -49,60 +50,60 @@ function vertical () {
 }
 
 /* VERIFICACAO DIAGONAL VITORIA VERMELHO */
-function diagonalVermelha () {
+function diagonalVermelha() {
     for (let i = 0; i < 7; i++) {
-        for(let x = 0; x < 6; x++) {
+        for (let x = 0; x < 6; x++) {
             //direita baixo
-            if (matriz[i][x] === "v" && matriz[i + 1][x + 1] === "v" && matriz[i + 2][x + 2] === "v" && matriz[i + 3][x + 3] === "v") {
+            if (matrizJogo[i][x] === "v" && matrizJogo[i + 1][x + 1] === "v" && matrizJogo[i + 2][x + 2] === "v" && matrizJogo[i + 3][x + 3] === "v") {
                 divResultado.appendChild(vitoriaVermelho)
             }
             //esquerda baixo
-            if (matriz[i][x] === "v" && matriz[i - 1][x + 1] === "v" && matriz[i - 2][x + 2] === "v" && matriz[i - 3][x + 3] === "v") {
+            if (matrizJogo[i][x] === "v" && matrizJogo[i - 1][x + 1] === "v" && matrizJogo[i - 2][x + 2] === "v" && matrizJogo[i - 3][x + 3] === "v") {
                 divResultado.appendChild(vitoriaVermelho)
             }
             //direita cima
-            if (matriz[i][x] === "v" && matriz[i + 1][x - 1] === "v" && matriz[i + 2][x - 2] === "v" && matriz[i + 3][x - 3] === "v") {
+            if (matrizJogo[i][x] === "v" && matrizJogo[i + 1][x - 1] === "v" && matrizJogo[i + 2][x - 2] === "v" && matrizJogo[i + 3][x - 3] === "v") {
                 divResultado.appendChild(vitoriaVermelho)
             }
             //esquerda cima
-            if (matriz[i][x] === "v" && matriz[i - 1][x - 1] === "v" && matriz[i - 2][x - 2] === "v" && matriz[i - 3][x - 3] === "v") {
+            if (matrizJogo[i][x] === "v" && matrizJogo[i - 1][x - 1] === "v" && matrizJogo[i - 2][x - 2] === "v" && matrizJogo[i - 3][x - 3] === "v") {
                 divResultado.appendChild(vitoriaVermelho)
             }
 
         }
-    }    
+    }
 }
 
 /* VERIFICACAO DIAGONAL VITORIA PRETO */
-function diagonalPreta () {
+function diagonalPreta() {
     for (let i = 0; i < 7; i++) {
-        for(let x = 0; x < 6; x++) {
+        for (let x = 0; x < 6; x++) {
             //direita baixo
-            if (matriz[i][x] === "p" && matriz[i + 1][x + 1] === "p" && matriz[i + 2][x + 2] === "p" && matriz[i + 3][x + 3] === "p") {
+            if (matrizJogo[i][x] === "p" && matrizJogo[i + 1][x + 1] === "p" && matrizJogo[i + 2][x + 2] === "p" && matrizJogo[i + 3][x + 3] === "p") {
                 divResultado.appendChild(vitoriaPreto)
             }
             //esquerda baixo
-            if (matriz[i][x] === "p" && matriz[i - 1][x + 1] === "p" && matriz[i - 2][x + 2] === "p" && matriz[i - 3][x + 3] === "p") {
+            if (matrizJogo[i][x] === "p" && matrizJogo[i - 1][x + 1] === "p" && matrizJogo[i - 2][x + 2] === "p" && matrizJogo[i - 3][x + 3] === "p") {
                 divResultado.appendChild(vitoriaPreto)
             }
             //direita cima
-            if (matriz[i][x] === "p" && matriz[i + 1][x - 1] === "v" && matriz[i + 2][x - 2] === "v" && matriz[i + 3][x - 3] === "v") {
+            if (matrizJogo[i][x] === "p" && matrizJogo[i + 1][x - 1] === "v" && matrizJogo[i + 2][x - 2] === "v" && matrizJogo[i + 3][x - 3] === "v") {
                 divResultado.appendChild(vitoriaPreto)
             }
             //esquerda cima
-            if (matriz[i][x] === "p" && matriz[i - 1][x - 1] === "p" && matriz[i - 2][x - 2] === "p" && matriz[i - 3][x - 3] === "p") {
+            if (matrizJogo[i][x] === "p" && matrizJogo[i - 1][x - 1] === "p" && matrizJogo[i - 2][x - 2] === "p" && matrizJogo[i - 3][x - 3] === "p") {
                 divResultado.appendChild(vitoriaPreto)
             }
 
         }
-    }   
+    }
 }
 
 /* VERIFICACAO EMPATE */
-function empate () {
+function verificarEmpate() {
     for (let i = 0; i < 7; i++) {
-        for(let x = 0; x < 6; x++) {
-            if (matriz[i][x] == "") {
+        for (let x = 0; x < 6; x++) {
+            if (matrizJogo[i][x] == "") {
                 return false
             }
         }
@@ -111,8 +112,8 @@ function empate () {
     return true
 }
 
-function verificaVitoria () {
-    empate()
+function verificaVitoria() {
+    verificarEmpate()
     diagonalPreta()
     diagonalVermelha()
     horizontal()

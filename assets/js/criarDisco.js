@@ -34,7 +34,7 @@ function criarDisco(evt) {
         adicionarDiscoAColuna(evt.currentTarget, disco)
         jogador = true
     }
-    
+
 }
 
 function adicionarDiscoAColuna(currentTarget, disco) {
@@ -51,6 +51,7 @@ function adicionarDiscoAColuna(currentTarget, disco) {
             break;
         }
     }
+    //verificaVitoria()
     console.log(matrizJogo)
 }
 
