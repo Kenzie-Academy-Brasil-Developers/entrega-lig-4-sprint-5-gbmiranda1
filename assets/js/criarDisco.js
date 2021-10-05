@@ -11,6 +11,7 @@ let dicionario = {
     "g": 6,
 }
 
+
 function criarDisco(evt) {
     let verifica = true
 
