@@ -29,14 +29,18 @@ function criarDisco(evt) {
     disco.classList.add("disco")
     if (jogador) {
         disco.classList.add("disco-jogador")
-        adicionarDiscoAColuna(evt.currentTarget, disco)
-        vez.innerText = "Jogador PRETO"
         jogador = false
+        vez.innerText = "Jogador PRETO"
+        adicionarDiscoAColuna(evt.currentTarget, disco)
+
+
     } else {
         disco.classList.add("disco-maquina")
-        adicionarDiscoAColuna(evt.currentTarget, disco)
-        vez.innerText = "Jogador VERMELHO"
         jogador = true
+        vez.innerText = "Jogador VERMELHO"
+        adicionarDiscoAColuna(evt.currentTarget, disco)
+
+
     }
 
 }
@@ -52,18 +56,23 @@ function adicionarDiscoAColuna(currentTarget, disco) {
                 }
             } else {
                 matrizJogo[i][dicionario[currentTarget.id]] = "p"
+
                 if (verificaVitoria(i, dicionario[currentTarget.id], "p")) {
                     status = true
                 }
-
             }
             currentTarget.children[i].appendChild(disco)
             break;
         }
     }
-    if (status) {
-        reiniciar()
-    }
+    setTimeout(function() {
+        if (status) {
+            console.log("oi")
+            reiniciar()
+        }
+    }, 200);
+
+
 }
 
 function criarMatriz() {
@@ -86,6 +95,9 @@ function reiniciar() {
         }
     }
     jogador = true
+    let vez = document.querySelector("#vezJogador").lastElementChild
+    vez.innerText = "Jogador VERMELHO"
+    console.log(jogador, vez.value)
 }
 
 criarMatriz()

@@ -116,7 +116,15 @@ function verificarEmpate() {
 }
 
 function verificaVitoria(i, j, vORp) { //linha, coluna, o ultimo parametro é dizendo se o elemento que vc está verificando é vermelho ou preto
-    if (verificarVitoriaDiagonal(i, j, vORp) || verificarVitoriaVertical(i, j, vORp) || verificarVitoriaHorizontal(i, j, vORp) || verificarEmpate()) {
-        return true
-    }
+    setInterval(function() {
+        if (verificarVitoriaDiagonal(i, j, vORp) || verificarVitoriaVertical(i, j, vORp) || verificarVitoriaHorizontal(i, j, vORp) || verificarEmpate()) {
+            jogador = true
+            reiniciar()
+            return true
+
+        } else {
+            return false
+        }
+    }, 500);
+
 }
