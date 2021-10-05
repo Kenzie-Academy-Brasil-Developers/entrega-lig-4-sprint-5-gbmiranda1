@@ -13,7 +13,7 @@ let dicionario = {
 
 function criarDisco(evt) {
     let verifica = true
-    let disco = document.createElement("div")
+
     for (let i = evt.currentTarget.children.length - 1; i >= 0; i--) {
         if (evt.currentTarget.children[i].children.length == 0) {
             verifica = false
@@ -23,6 +23,8 @@ function criarDisco(evt) {
     if (verifica) {
         return;
     }
+    let disco = document.createElement("div")
+    disco.classList.add("disco")
     if (jogador) {
         disco.classList.add("disco-jogador")
         adicionarDiscoAColuna(evt.currentTarget, disco)
@@ -60,6 +62,19 @@ function criarMatriz() {
         }
     }
     console.log(matrizJogo)
+}
+
+function reiniciar() {
+    let elements = document.querySelectorAll(".disco")
+    for (let i = 0; i < elements.length; i++) {
+        elements[i].parentNode.removeChild(elements[i])
+    }
+    for (let i = 0; i < matrizJogo.length; i++) {
+        for (let j = 0; j < matrizJogo[i].length; j++) {
+            matrizJogo[i][j] = ""
+        }
+    }
+    jogador = true
 }
 
 criarMatriz()
