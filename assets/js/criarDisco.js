@@ -1,27 +1,55 @@
 let jogador = true
 let matrizJogo = []
 
+let dicionario = {
+    "a": 0,
+    "b": 1,
+    "c": 2,
+    "d": 3,
+    "e": 4,
+    "f": 5,
+    "g": 6,
+}
 
 function criarDisco(evt) {
+    let verifica = true
     let disco = document.createElement("div")
+    for (let i = evt.currentTarget.children.length - 1; i >= 0; i--) {
+        if (evt.currentTarget.children[i].children.length == 0) {
+            verifica = false
+            break;
+        }
+    }
+    if (verifica) {
+        return;
+    }
     if (jogador) {
         disco.classList.add("disco-jogador")
+        adicionarDiscoAColuna(evt.currentTarget, disco)
         jogador = false
     } else {
         disco.classList.add("disco-maquina")
+        adicionarDiscoAColuna(evt.currentTarget, disco)
         jogador = true
     }
-    adicionarDiscoAColuna(evt.currentTarget, disco)
+
 }
 
 function adicionarDiscoAColuna(currentTarget, disco) {
     for (let i = currentTarget.children.length - 1; i >= 0; i--) {
         console.log("oi")
         if (currentTarget.children[i].children.length == 0) {
+            console.log(dicionario[currentTarget.id], i)
+            if (jogador) {
+                matrizJogo[i][dicionario[currentTarget.id]] = "v"
+            } else {
+                matrizJogo[i][dicionario[currentTarget.id]] = "p"
+            }
             currentTarget.children[i].appendChild(disco)
             break;
         }
     }
+    console.log(matrizJogo)
 }
 
 function criarMatriz() {
@@ -33,3 +61,5 @@ function criarMatriz() {
     }
     console.log(matrizJogo)
 }
+
+criarMatriz()
