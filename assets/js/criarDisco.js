@@ -51,7 +51,7 @@ function adicionarDiscoAColuna(currentTarget, disco) {
             break;
         }
     }
-    //verificaVitoria()
+    verificaVitoria()
     console.log(matrizJogo)
 }
 
