@@ -30,21 +30,10 @@ function horizontal() {
 }
 
 /* VERIFICACAO VERTICAL */
-function vertical() {
-    for (let i = 0; i < 6; i++) {
-        for (let x = 0; x < 7; x++) {
-            if (matrizJogo[i][x] === "v" && matrizJogo[i][x + 1] === "v" && matrizJogo[i][x + 2] === "v" && matrizJogo[i][x + 3] === "v") {
-                divResultado.appendChild(vitoriaVermelho)
-            }
-            if (matrizJogo[i][x] === "v" && matrizJogo[i][x - 1] === "v" && matrizJogo[i][x - 2] === "v" && matrizJogo[i][x - 3] === "v") {
-                divResultado.appendChild(vitoriaVermelho)
-            }
-            if (matrizJogo[i][x] === "p" && matrizJogo[i][x - 1] === "p" && matrizJogo[i][x - 2] === "p" && matrizJogo[i][x - 3] === "p") {
-                divResultado.appendChild(vitoriaPreto)
-            }
-            if (matrizJogo[i][x] === "p" && matrizJogo[i][x - 1] === "p" && matrizJogo[i][x - 2] === "p" && matrizJogo[i][x - 3] === "p") {
-                divResultado.appendChild(vitoriaPreto)
-            }
+function verificarVitoriaVertical(i, j, vORp) {
+    if (i + 3 <= 5) {
+        if (matrizJogo[i][j] === vORp && matrizJogo[i + 1][j] === vORp && matrizJogo[i + 2][j] === vORp && matrizJogo[i + 3][j] === vORp) {
+            mostrarPopUp("telaVitoria", "Ganhou na Vertical")
         }
     }
 }
@@ -130,5 +119,5 @@ function verificaVitoria(i, j, vORp) { //linha, coluna, o ultimo parametro é di
     }
 
     //horizontal()
-    //vertical()
+    verificarVitoriaVertical(i,j, vORp)
 }
