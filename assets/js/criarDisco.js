@@ -40,9 +40,8 @@ function criarDisco(evt) {
 function adicionarDiscoAColuna(currentTarget, disco) {
 
     for (let i = currentTarget.children.length - 1; i >= 0; i--) {
-        console.log("oi")
         if (currentTarget.children[i].children.length == 0) {
-            console.log(dicionario[currentTarget.id], i)
+
             if (jogador) {
                 matrizJogo[i][dicionario[currentTarget.id]] = "v"
                 verificaVitoria(i, dicionario[currentTarget.id], "v")
@@ -54,7 +53,7 @@ function adicionarDiscoAColuna(currentTarget, disco) {
             break;
         }
     }
-    console.log(matrizJogo)
+
 }
 
 function criarMatriz() {
