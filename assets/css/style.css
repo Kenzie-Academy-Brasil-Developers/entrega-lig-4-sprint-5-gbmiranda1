@@ -13,7 +13,7 @@ div {
 body {
     width: 100vw;
     height: 100vh;
-    background-color: #4E69C1;
+    background-color: var(--main-color);
 }
 
 header {
@@ -22,8 +22,8 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #C8D8F7;
-    color: #294987;
+    background-color: var(--second-color);
+    color: var(--third-color);
 }
 
 main {
@@ -93,14 +93,29 @@ main {
     max-width: 250px;
     position: absolute;
     left: 50%;
-    top: 50%;
+    top: 48%;
     transform: translate(-50%, -50%);
-    background-color: white;
+    background-color: var(--main-color);
     border-radius: 10px;
     width: 250px;
     height: 220px;
     padding: 10px;
     z-index: 2;
+}
+
+@media (min-width: 769px) {
+    .popup-comecarJogo___botoes {
+        top: 54%;
+    }
+}
+
+.jogador { 
+    color: white;
+}
+
+#iniciarJogo {
+    color: white;
+    font-size: 15px;
 }
 
 .popup-comecarJogo___botoes button {
@@ -109,6 +124,7 @@ main {
     border: 0px;
     padding: 10px;
     background-color: rgba(0, 0, 0, 0.479);
+    border: 1px solid transparent;
 }
 
 .popup-comecarJogo___botoes button:hover {
@@ -116,8 +132,8 @@ main {
 }
 
 .popup-comecarJogo___botoes button:active {
-    background-color: white;
-    border: 2px solid black;
+    background-color: rgba(0, 0, 0, 0.479);
+    border: 1px solid black;
 }
 
 .popup-comecarJogo___botoes input {
@@ -125,7 +141,7 @@ main {
     border: 0px;
     padding: 10px;
     margin: 10px 0px;
-    background-color: rgba(0, 0, 0, 0.247);
+    background-color: var(--second-color);
 }
 
 .popup-comecarJogo {
@@ -158,8 +174,8 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #C8D8F7;
-    color: #294987;
+    background-color: var(--second-color);
+    color: var(--third-color);
 }
 
 @media (min-width: 769px) {

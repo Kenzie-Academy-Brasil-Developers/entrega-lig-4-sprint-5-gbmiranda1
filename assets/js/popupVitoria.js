@@ -10,6 +10,8 @@ function mostrarPopUp(mostrarTela, texto) {
     popup.addEventListener("click", (e) => {
         if (e.target.id === mostrarTela) {
             popup.classList.remove("visivel")
+            let div = document.querySelector(".popup-comecarJogo")
+            div.style.display = "flex"
 
         } else if (e.target.className === "sair") {
             popup.classList.remove("visivel")
@@ -24,4 +26,4 @@ function mostrarPopUp(mostrarTela, texto) {
 
 
 // TESTE PARA O POPUP, SO DESCOMENTAR
-mostrarPopUp("telaVitoria")
+//mostrarPopUp("telaVitoria")
