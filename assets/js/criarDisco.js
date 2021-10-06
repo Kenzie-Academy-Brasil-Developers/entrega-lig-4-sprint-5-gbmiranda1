@@ -1,5 +1,6 @@
 let jogador = true
 let matrizJogo = []
+let ganhou = false
 
 let dicionario = {
     "a": 0,
@@ -22,7 +23,7 @@ function criarDisco(evt) {
             break;
         }
     }
-    if (verifica) {
+    if (verifica || ganhou) {
         return;
     }
     let disco = document.createElement("div")
@@ -60,11 +61,13 @@ function adicionarDiscoAColuna(currentTarget, disco) {
                 matrizJogo[i][dicionario[currentTarget.id]] = "v"
                 if (verificaVitoria(i, dicionario[currentTarget.id], "v")) {
                     status = true
+                    ganhou = true
                 }
             } else {
                 matrizJogo[i][dicionario[currentTarget.id]] = "p"
                 if (verificaVitoria(i, dicionario[currentTarget.id], "p")) {
                     status = true
+                    ganhou = true
                 }
             }
             currentTarget.children[i].appendChild(disco)
@@ -101,7 +104,7 @@ function reiniciar() {
         }
     }
     jogador = true
-
+    ganhou = false
 }
 
 criarMatriz()
