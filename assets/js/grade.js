@@ -22,9 +22,29 @@ const vezJogador = document.createElement("section");
 vezJogador.id = "vezJogador";
 principal.appendChild(vezJogador)
 
+let jogador1
+let jogador2
+document.querySelector("#iniciarJogo").addEventListener("click", pegarValue)
 const mensaje = document.createElement("h2");
-vezJogador.appendChild(mensaje);
-mensaje.innerText = "Jogador VERMELHO"
+
+function pegarValue() {
+    jogador1 = document.querySelector("#jogador1").value
+    jogador2 = document.querySelector("#jogador2").value
+
+
+    vezJogador.appendChild(mensaje);
+    mensaje.innerText = ""
+    if (jogador1 != "") {
+        mensaje.innerText = "Vez de " + jogador1
+    } else {
+        mensaje.innerText = "Vez do jogador VERMELHO"
+    }
+    let div = document.querySelector(".popup-comecarJogo")
+    div.style.display = "none"
+}
+
+
+
 
 const grade = document.createElement("section");
 grade.id = "grade";
