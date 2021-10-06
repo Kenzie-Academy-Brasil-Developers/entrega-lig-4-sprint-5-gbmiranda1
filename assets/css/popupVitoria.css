@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap');
+
 .telaVitoria {
     background-color: rgba(0, 0, 0, .5);
     width: 100vw;
@@ -18,20 +20,40 @@
 .linkVitoria {
     width: 60%;
     background-color: white;
-    padding: 40px;
     border: 2px solid black;
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .sair {
-    font-size: 17px;
+    font-size: 20px;
     position: absolute;
-    top: 0px;
-    right: 0px;
-    width: 35px;
-    height: 35px;
+    top: 2px;
+    right: 2px;
+    width: 30px;
+    height: 30px;
     border: 1px solid black;
+    border-radius: 8px;
     background-color: white;
-    border-radius: 50%;
     cursor: pointer;
+}
+.sair:hover {
+    background-color: red;
+}
+.texto-da-vitoria {
+    color: green;
+    font-size: 24px;
+    font-family: 'Raleway', sans-serif;
+}
+
+@media (min-width: 769px) {
+    .linkVitoria {
+        width: 70%;
+        height: 30%;
+        border-radius: 10px;
+    }
+
+
 }
