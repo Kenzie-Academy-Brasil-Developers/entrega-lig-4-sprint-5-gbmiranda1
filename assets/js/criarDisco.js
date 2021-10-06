@@ -30,17 +30,23 @@ function criarDisco(evt) {
     if (jogador) {
         disco.classList.add("disco-jogador")
         jogador = false
-        vez.innerText = "Jogador PRETO"
+
+        if (jogador2 != "") {
+            vez.innerText = "Vez de " + jogador2
+        } else {
+            vez.innerText = "Vez do jogador PRETO"
+        }
+
         adicionarDiscoAColuna(evt.currentTarget, disco)
-
-
     } else {
         disco.classList.add("disco-maquina")
         jogador = true
-        vez.innerText = "Jogador VERMELHO"
+        if (jogador1 != "") {
+            vez.innerText = "Vez de " + jogador1
+        } else {
+            vez.innerText = "Vez do jogador VERMELHO"
+        }
         adicionarDiscoAColuna(evt.currentTarget, disco)
-
-
     }
 
 }
@@ -95,9 +101,9 @@ function reiniciar() {
         }
     }
     jogador = true
-    let vez = document.querySelector("#vezJogador").lastElementChild
-    vez.innerText = "Jogador VERMELHO"
-    console.log(jogador, vez.value)
+
+    let div = document.querySelector(".popup-comecarJogo")
+    div.style.display = "flex"
 }
 
 criarMatriz()

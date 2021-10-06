@@ -1,28 +1,43 @@
 /* VERIFICACAO HORIZONTAL*/
+function mostrarMensagemVitoria(vORp, direcao) {
+    if (vORp == "v") {
+        if (jogador1 != "") {
+            mostrarPopUp("telaVitoria", jogador2.toUpperCase() + " GANHOU na " + direcao);
+        } else {
+            mostrarPopUp("telaVitoria", "Jogador PRETO GANHOU");
+        }
+    } else {
+        if (jogador2 != "") {
+            mostrarPopUp("telaVitoria", jogador1.toUpperCase() + " GANHOU na " + direcao);
+        } else {
+            mostrarPopUp("telaVitoria", "Jogador VERMELHO GANHOU");
+        }
+    }
+}
 
 function verificarVitoriaHorizontal(i, j, vORp) {
     const elemento = matrizJogo[i];
     if (j + 3 < 7) {
         if (elemento[j] === vORp && elemento[j + 1] === vORp && elemento[j + 2] === vORp && elemento[j + 3] === vORp) {
-            mostrarPopUp("telaVitoria", "Ganhou na Horizontal1");
+            mostrarMensagemVitoria(vORp, "horizontal")
             return true;
         }
     }
     if (j - 1 >= 0 && j + 2 < 7) {
         if (elemento[j - 1] === vORp && elemento[j] === vORp && elemento[j + 1] === vORp && elemento[j + 2] === vORp) {
-            mostrarPopUp("telaVitoria", "Ganhou na Horizontal2");
+            mostrarMensagemVitoria(vORp, "horizontal")
             return true;
         }
     }
     if (j - 2 >= 0 && j + 1 < 7) {
         if (elemento[j - 2] === vORp && elemento[j - 1] === vORp && elemento[j] === vORp && elemento[j + 1] === vORp) {
-            mostrarPopUp("telaVitoria", "Ganhou na Horizontal3");
+            mostrarMensagemVitoria(vORp, "horizontal")
             return true;
         }
     }
     if (j - 3 >= 0) {
         if (elemento[j] === vORp && elemento[j - 1] === vORp && elemento[j - 2] === vORp && elemento[j - 3] === vORp) {
-            mostrarPopUp("telaVitoria", "Ganhou na Horizontal4");
+            mostrarMensagemVitoria(vORp, "horizontal")
             return true;
         }
     }
@@ -34,7 +49,7 @@ function verificarVitoriaHorizontal(i, j, vORp) {
 function verificarVitoriaVertical(i, j, vORp) {
     if (i + 3 <= 5) {
         if (matrizJogo[i][j] === vORp && matrizJogo[i + 1][j] === vORp && matrizJogo[i + 2][j] === vORp && matrizJogo[i + 3][j] === vORp) {
-            mostrarPopUp("telaVitoria", "Ganhou na Vertical")
+            mostrarMensagemVitoria(vORp, "vertical")
             return true
         }
     }
@@ -44,60 +59,52 @@ function verificarVitoriaVertical(i, j, vORp) {
 function verificarVitoriaDiagonal(i, j, vORp) {
     if (i + 3 < 6 && j + 3 < 7) {
         if (matrizJogo[i][j] == vORp && matrizJogo[i + 1][j + 1] == vORp && matrizJogo[i + 2][j + 2] == vORp && matrizJogo[i + 3][j + 3] == vORp) {
-            mostrarPopUp("telaVitoria", "Ganhou na Diagonal")
+            mostrarMensagemVitoria(vORp, "diagonal")
             return true
         }
     }
     if (i - 3 >= 0 && j - 3 >= 0) {
         if (matrizJogo[i][j] == vORp && matrizJogo[i - 1][j - 1] == vORp && matrizJogo[i - 2][j - 2] == vORp && matrizJogo[i - 3][j - 3] == vORp) {
-            mostrarPopUp("telaVitoria", "Ganhou na Diagonal")
-            console.log("sim 1")
+            mostrarMensagemVitoria(vORp, "diagonal")
+
             return true
         }
     }
 
     if (i + 3 < 6 && j - 3 >= 0) {
         if (matrizJogo[i][j] == vORp && matrizJogo[i + 1][j - 1] == vORp && matrizJogo[i + 2][j - 2] == vORp && matrizJogo[i + 3][j - 3] == vORp) {
-            mostrarPopUp("telaVitoria", "Ganhou na Diagonal")
-            console.log("sim 2")
+            mostrarMensagemVitoria(vORp, "diagonal")
             return true
         }
     }
     if (i - 3 >= 0 && j + 3 < 7) {
         if (matrizJogo[i][j] == vORp && matrizJogo[i - 1][j + 1] == vORp && matrizJogo[i - 2][j + 2] == vORp && matrizJogo[i - 3][j + 3] == vORp) {
-            mostrarPopUp("telaVitoria", "Ganhou na Diagonal")
-            console.log("sim 3")
+            mostrarMensagemVitoria(vORp, "diagonal")
             return true
         }
     }
     if (i + 1 < 6 && i - 2 >= 0 && j + 1 < 7 && j - 2 >= 0) {
         if (matrizJogo[i + 1][j + 1] == vORp && matrizJogo[i][j] == vORp && matrizJogo[i - 1][j - 1] == vORp && matrizJogo[i - 2][j - 2] == vORp) {
-            mostrarPopUp("telaVitoria", "Ganhou na Diagonal")
-            console.log("sim 4")
+            mostrarMensagemVitoria(vORp, "diagonal")
             return true
         }
     }
     if (i + 2 < 6 && i - 1 >= 0 && j + 2 < 7 && j - 1 >= 0) {
-        if (matrizJogo[i + 1][j + 1] == vORp && matrizJogo[i + 2][j + 2] == vORp &&matrizJogo[i][j] == vORp && matrizJogo[i - 1][j - 1] == vORp) {
-            mostrarPopUp("telaVitoria", "Ganhou na Diagonal")
-            console.log("sim 5")
+        if (matrizJogo[i + 1][j + 1] == vORp && matrizJogo[i + 2][j + 2] == vORp && matrizJogo[i][j] == vORp && matrizJogo[i - 1][j - 1] == vORp) {
+            mostrarMensagemVitoria(vORp, "diagonal")
             return true
         }
     }
     if (i - 2 >= 0 && j + 2 > 7 && i + 1 < 6 && j - 1 >= 0) {
         if (matrizJogo[i + 1][j - 1] == vORp && matrizJogo[i][j] == vORp && matrizJogo[i - 1][j + 1] == vORp && matrizJogo[i - 2][j + 2] == vORp) {
-            mostrarPopUp("telaVitoria", "Ganhou na Diagonal")
-            console.log("sim 6")
+            mostrarMensagemVitoria(vORp, "diagonal")
             return true
         }
     }
     if ((i - 1) >= 0 && (j + 1) < 7 && (i + 2) < 6 && (j - 2) >= 0) {
         if (matrizJogo[i - 1][j + 1] == vORp && matrizJogo[i][j] == vORp && matrizJogo[i + 1][j - 1] == vORp && matrizJogo[i + 2][j - 2] == vORp) {
-            mostrarPopUp("telaVitoria", "Ganhou na Diagonal")
-            console.log("sim 7")
+            mostrarMensagemVitoria(vORp, "diagonal")
             return true
-
-
         }
     }
 }
