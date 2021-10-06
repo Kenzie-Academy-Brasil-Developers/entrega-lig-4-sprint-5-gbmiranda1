@@ -54,6 +54,29 @@ const datos = document.createElement("section");
 datos.id = "datos";
 principal.appendChild(datos);
 
+let idColunas = ["a", "b", "c", "d", "e", "f", "g"]
+let cont = 1
+
+function criarTabuleiro() {
+    for (let i = 0; i < 7; i++) {
+        const divLinha = document.createElement("div")
+        divLinha.id = idColunas[i]
+        divLinha.classList.add("coluna")
+        for (let j = 0; j < 6; j++) {
+            const divColuna = document.createElement("div")
+            divColuna.id = cont + "";
+            cont++
+            divColuna.classList.add("celda")
+            divLinha.addEventListener("click", criarDisco)
+            divLinha.appendChild(divColuna)
+        }
+        grade.appendChild(divLinha)
+    }
+}
+criarTabuleiro()
+
+
+/*
 function Celda(i, str) {
     this.celda = document.createElement("div");
     this.celda.id = i + 1;
@@ -135,3 +158,5 @@ dibujaCeldas(coluna04, colunaD);
 dibujaCeldas(coluna05, colunaE);
 dibujaCeldas(coluna06, colunaF);
 dibujaCeldas(coluna07, colunaG);
+
+*/
