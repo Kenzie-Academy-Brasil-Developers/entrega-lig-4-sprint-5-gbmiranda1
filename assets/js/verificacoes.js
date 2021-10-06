@@ -1,16 +1,16 @@
 /* VERIFICACAO HORIZONTAL*/
 function mostrarMensagemVitoria(vORp, direcao) {
-    if (vORp == "v") {
+    if (vORp == "p") {
         if (jogador1 != "") {
             mostrarPopUp("telaVitoria", jogador2.toUpperCase() + " GANHOU na " + direcao);
         } else {
-            mostrarPopUp("telaVitoria", "Jogador PRETO GANHOU");
+            mostrarPopUp("telaVitoria", "Jogador PRETO GANHOU na " + direcao);
         }
     } else {
         if (jogador2 != "") {
             mostrarPopUp("telaVitoria", jogador1.toUpperCase() + " GANHOU na " + direcao);
         } else {
-            mostrarPopUp("telaVitoria", "Jogador VERMELHO GANHOU");
+            mostrarPopUp("telaVitoria", "Jogador VERMELHO GANHOU na " + direcao);
         }
     }
 }
@@ -123,15 +123,11 @@ function verificarEmpate() {
 }
 
 function verificaVitoria(i, j, vORp) { //linha, coluna, o ultimo parametro é dizendo se o elemento que vc está verificando é vermelho ou preto
-    setInterval(function() {
-        if (verificarVitoriaDiagonal(i, j, vORp) || verificarVitoriaVertical(i, j, vORp) || verificarVitoriaHorizontal(i, j, vORp) || verificarEmpate()) {
-            jogador = true
-            reiniciar()
-            return true
+    if (verificarVitoriaDiagonal(i, j, vORp) || verificarVitoriaVertical(i, j, vORp) || verificarVitoriaHorizontal(i, j, vORp) || verificarEmpate()) {
+        jogador = true
+        return true
 
-        } else {
-            return false
-        }
-    }, 1300);
-
+    } else {
+        return false
+    }
 }
