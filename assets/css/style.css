@@ -145,7 +145,7 @@ main {
 
 @keyframes go-back {
     from {
-        transform: translateY(-1000px);
+        transform: translateY(-320px);
     }
     to {
         transform: translateY(0);
