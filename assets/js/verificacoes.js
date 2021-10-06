@@ -1,18 +1,20 @@
 /* VERIFICACAO HORIZONTAL*/
 function mostrarMensagemVitoria(vORp, direcao) {
-    if (vORp == "p") {
-        if (jogador1 != "") {
-            mostrarPopUp("telaVitoria", jogador2.toUpperCase() + " GANHOU na " + direcao);
+    setTimeout(function() {
+        if (vORp == "p") {
+            if (jogador1 != "") {
+                mostrarPopUp("telaVitoria", jogador2.toUpperCase() + " GANHOU na " + direcao);
+            } else {
+                mostrarPopUp("telaVitoria", "Jogador PRETO GANHOU na " + direcao);
+            }
         } else {
-            mostrarPopUp("telaVitoria", "Jogador PRETO GANHOU na " + direcao);
+            if (jogador2 != "") {
+                mostrarPopUp("telaVitoria", jogador1.toUpperCase() + " GANHOU na " + direcao);
+            } else {
+                mostrarPopUp("telaVitoria", "Jogador VERMELHO GANHOU na " + direcao);
+            }
         }
-    } else {
-        if (jogador2 != "") {
-            mostrarPopUp("telaVitoria", jogador1.toUpperCase() + " GANHOU na " + direcao);
-        } else {
-            mostrarPopUp("telaVitoria", "Jogador VERMELHO GANHOU na " + direcao);
-        }
-    }
+    }, 1000);
 }
 
 function verificarVitoriaHorizontal(i, j, vORp) {
@@ -50,9 +52,11 @@ function verificarVitoriaVertical(i, j, vORp) {
     if (i + 3 <= 5) {
         if (matrizJogo[i][j] === vORp && matrizJogo[i + 1][j] === vORp && matrizJogo[i + 2][j] === vORp && matrizJogo[i + 3][j] === vORp) {
             mostrarMensagemVitoria(vORp, "vertical")
+
             return true
         }
     }
+
 }
 
 /* VERIFICACAO DIAGONAL VITORIA VERMELHO */

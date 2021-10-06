@@ -71,10 +71,11 @@ function adicionarDiscoAColuna(currentTarget, disco) {
             break;
         }
     }
-
-    if (status) {
-        reiniciar()
-    }
+    setTimeout(function() {
+        if (status) {
+            reiniciar()
+        }
+    }, 1000);
 
 
 
@@ -101,8 +102,6 @@ function reiniciar() {
     }
     jogador = true
 
-    let div = document.querySelector(".popup-comecarJogo")
-    div.style.display = "flex"
 }
 
 criarMatriz()
