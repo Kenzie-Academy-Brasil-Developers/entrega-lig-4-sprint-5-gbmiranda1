@@ -132,6 +132,6 @@ function verificaVitoria(i, j, vORp) { //linha, coluna, o ultimo parametro é di
         } else {
             return false
         }
-    }, 500);
+    }, 1300);
 
 }
