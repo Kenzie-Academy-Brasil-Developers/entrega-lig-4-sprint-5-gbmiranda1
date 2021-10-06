@@ -21,25 +21,25 @@ function verificarVitoriaHorizontal(i, j, vORp) {
     const elemento = matrizJogo[i];
     if (j + 3 < 7) {
         if (elemento[j] === vORp && elemento[j + 1] === vORp && elemento[j + 2] === vORp && elemento[j + 3] === vORp) {
-            mostrarMensagemVitoria(vORp, "horizontal")
+            mostrarMensagemVitoria(vORp, "horizontal");
             return true;
         }
     }
     if (j - 1 >= 0 && j + 2 < 7) {
         if (elemento[j - 1] === vORp && elemento[j] === vORp && elemento[j + 1] === vORp && elemento[j + 2] === vORp) {
-            mostrarMensagemVitoria(vORp, "horizontal")
+            mostrarMensagemVitoria(vORp, "horizontal");
             return true;
         }
     }
     if (j - 2 >= 0 && j + 1 < 7) {
         if (elemento[j - 2] === vORp && elemento[j - 1] === vORp && elemento[j] === vORp && elemento[j + 1] === vORp) {
-            mostrarMensagemVitoria(vORp, "horizontal")
+            mostrarMensagemVitoria(vORp, "horizontal");
             return true;
         }
     }
     if (j - 3 >= 0) {
         if (elemento[j] === vORp && elemento[j - 1] === vORp && elemento[j - 2] === vORp && elemento[j - 3] === vORp) {
-            mostrarMensagemVitoria(vORp, "horizontal")
+            mostrarMensagemVitoria(vORp, "horizontal");
             return true;
         }
     }
