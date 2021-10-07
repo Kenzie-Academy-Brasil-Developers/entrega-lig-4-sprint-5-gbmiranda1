@@ -75,88 +75,27 @@ function criarTabuleiro() {
 }
 criarTabuleiro()
 
+const btnReset = document.createElement("button");
+btnReset.type = "reset";
+btnReset.className = "reset";
+btnReset.id = "reset";
+btnReset.innerText = "Reset";
+datos.appendChild(btnReset);
 
-/*
-function Celda(i, str) {
-    this.celda = document.createElement("div");
-    this.celda.id = i + 1;
-    this.celda.className = str;
-}
+const victoryScreen = document.createElement("div");
+victoryScreen.className = "telaVitoria";
+victoryScreen.id = "telaVitoria";
+datos.appendChild(victoryScreen);
 
-function Coluna(i, str) {
-    this.coluna = document.createElement("div");
-    this.coluna.id = String.fromCharCode(97 + i);
-    this.coluna.className = str;
-}
+const victoryLink = document.createElement("div");
+victoryLink.className = "linkVitoria";
+victoryScreen.appendChild(victoryLink);
 
-const colunas = [];
+const btnExit = document.createElement("button");
+btnExit.className = "sair";
+btnExit.innerText = "X";
+victoryLink.appendChild(btnExit);
 
-function criaColunas(n, str, array) {
-    for (let i = 0; i < n; i++) {
-        array[i] = new Coluna(i, str);
-    }
-    return array;
-}
-
-criaColunas(7, "coluna", colunas);
-
-function dibujaColunas(array, tag) {
-    for (let i = 0; i < array.length; i++) {
-        const element = array[i];
-        tag.appendChild(element.coluna);
-        element.coluna.addEventListener("click", criarDisco)
-    }
-}
-
-
-dibujaColunas(colunas, grade);
-
-const coluna01 = [];
-const coluna02 = [];
-const coluna03 = [];
-const coluna04 = [];
-const coluna05 = [];
-const coluna06 = [];
-const coluna07 = [];
-
-function criaCeldas(n, str, array) {
-    for (let i = n; i < n + 6; i++) {
-        array[i - n] = new Celda(i, str);
-    }
-    return array;
-}
-
-criaCeldas(0, "celda", coluna01);
-criaCeldas(6, "celda", coluna02);
-criaCeldas(12, "celda", coluna03);
-criaCeldas(18, "celda", coluna04);
-criaCeldas(24, "celda", coluna05);
-criaCeldas(30, "celda", coluna06);
-criaCeldas(36, "celda", coluna07);
-
-const colunaA = document.getElementById("a");
-const colunaB = document.getElementById("b");
-const colunaC = document.getElementById("c");
-const colunaD = document.getElementById("d");
-const colunaE = document.getElementById("e");
-const colunaF = document.getElementById("f");
-const colunaG = document.getElementById("g");
-
-function dibujaCeldas(array, tag) {
-    for (let i = 0; i < array.length; i++) {
-        const element = array[i];
-        tag.appendChild(element.celda);
-
-    }
-}
-
-
-dibujaCeldas(coluna01, colunaA);
-dibujaCeldas(coluna02, colunaB);
-dibujaCeldas(coluna03, colunaC);
-dibujaCeldas(coluna04, colunaD);
-dibujaCeldas(coluna05, colunaE);
-dibujaCeldas(coluna06, colunaF);
-dibujaCeldas(coluna07, colunaG);
-
-*/
+const victoryMessage = document.createElement("h3");
+victoryMessage.id = "texto-vitoria";
+victoryLink.appendChild(victoryMessage);
