@@ -104,6 +104,7 @@ function reiniciar() {
     }
     jogador = true
     ganhou = false
+    mensaje.innerText = "Vez do jogador VERMELHO"
 }
 
 criarMatriz()
