@@ -31,6 +31,7 @@ main {
     height: 80vh;
     margin: auto;
     background-color: #D6DEED;
+    position: relative;
 }
 
 #vezJogador {
@@ -93,19 +94,14 @@ main {
     max-width: 250px;
     position: absolute;
     left: 50%;
-    top: 48%;
+    top: 50%;
     transform: translate(-50%, -50%);
     background-color: var(--main-color);
     border-radius: 10px;
     width: 250px;
     height: 220px;
     padding: 10px;
-}
-
-@media (min-width: 769px) {
-    .popup-comecarJogo___botoes {
-        top: 54%;
-    }
+    z-index: 2;
 }
 
 .jogador {
@@ -148,6 +144,9 @@ main {
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.082);
     position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
     z-index: 5;
 }
 
@@ -179,6 +178,9 @@ footer {
 }
 
 @media (min-width: 769px) {
+    .popup-comecarJogo___botoes {
+        top: 50%;
+    }
     h1 {
         font-size: 3em;
     }
