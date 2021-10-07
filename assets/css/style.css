@@ -1,0 +1,217 @@
+body,
+header,
+footer,
+main,
+section,
+div {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--main-color);
+}
+
+header {
+    width: 100%;
+    height: 12vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--second-color);
+    color: var(--third-color);
+}
+
+main {
+    width: 320px;
+    height: 80vh;
+    margin: auto;
+    background-color: #D6DEED;
+}
+
+#vezJogador {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#grade {
+    width: 280px;
+    height: 50%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.coluna {
+    width: 40px;
+    height: 240px;
+    margin: auto;
+}
+
+.celda {
+    width: 40px;
+    height: 40px;
+    margin: auto;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#datos {
+    width: 100%;
+    height: 30%;
+}
+
+.disco-jogador {
+    width: 30px;
+    height: 30px;
+    background-color: red;
+    border-radius: 50%;
+}
+
+.disco-maquina {
+    width: 30px;
+    height: 30px;
+    background-color: black;
+    border-radius: 50%;
+}
+
+.popup-comecarJogo___botoes {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 250px;
+    position: absolute;
+    left: 50%;
+    top: 48%;
+    transform: translate(-50%, -50%);
+    background-color: var(--main-color);
+    border-radius: 10px;
+    width: 250px;
+    height: 220px;
+    padding: 10px;
+}
+
+@media (min-width: 769px) {
+    .popup-comecarJogo___botoes {
+        top: 54%;
+    }
+}
+
+.jogador {
+    color: white;
+}
+
+#iniciarJogo {
+    color: white;
+    font-size: 15px;
+}
+
+.popup-comecarJogo___botoes button {
+    margin-top: 10px;
+    border-radius: 10px;
+    border: 0px;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.479);
+    border: 1px solid transparent;
+}
+
+.popup-comecarJogo___botoes button:hover {
+    background-color: rgba(0, 0, 0, 0.315);
+}
+
+.popup-comecarJogo___botoes button:active {
+    background-color: rgba(0, 0, 0, 0.479);
+    border: 1px solid black;
+}
+
+.popup-comecarJogo___botoes input {
+    border-radius: 10px;
+    border: 0px;
+    padding: 10px;
+    margin: 10px 0px;
+    background-color: var(--second-color);
+}
+
+.popup-comecarJogo {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.082);
+    position: absolute;
+    z-index: 5;
+}
+
+.disco-jogador {
+    animation: go-back 1s alternate;
+}
+
+.disco-maquina {
+    animation: go-back 1s alternate;
+}
+
+@keyframes go-back {
+    from {
+        transform: translateY(-320px);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+footer {
+    width: 100%;
+    height: 8vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--second-color);
+    color: var(--third-color);
+}
+
+@media (min-width: 769px) {
+    h1 {
+        font-size: 3em;
+    }
+    h2 {
+        font-size: 2em;
+    }
+    main {
+        width: 80%;
+    }
+    #vezJogador {
+        height: 15%;
+    }
+    #grade {
+        width: 560px;
+        height: 70%;
+    }
+    #datos {
+        height: 15%;
+    }
+    .coluna {
+        width: 80px;
+        height: 480px;
+    }
+    .celda {
+        width: 80px;
+        height: 80px;
+    }
+    .disco-jogador {
+        width: 70px;
+        height: 70px;
+    }
+    .disco-maquina {
+        width: 70px;
+        height: 70px;
+    }
+}
