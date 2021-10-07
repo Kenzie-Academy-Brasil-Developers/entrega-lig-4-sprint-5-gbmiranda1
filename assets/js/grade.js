@@ -15,7 +15,7 @@ const pie = document.createElement("footer");
 corpo.appendChild(pie);
 
 const pieLegenda = document.createElement("p");
-pieLegenda.innerText = "galubo q1 sprint 5";
+pieLegenda.innerText = "GaLuBo q1 sprint 5";
 pie.appendChild(pieLegenda);
 
 const vezJogador = document.createElement("section");
