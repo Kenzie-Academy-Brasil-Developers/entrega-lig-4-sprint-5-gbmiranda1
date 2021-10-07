@@ -31,7 +31,6 @@ main {
     height: 80vh;
     margin: auto;
     background-color: #D6DEED;
-    position: relative;
 }
 
 #vezJogador {
@@ -61,7 +60,7 @@ main {
     width: 40px;
     height: 40px;
     margin: auto;
-    border: 1px solid #294987;
+    border: 1px solid black;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -130,13 +129,10 @@ main {
 }
 
 .popup-comecarJogo {
-    width: 80vw;
-    height: 80vh;
+    width: 100vw;
+    height: 100vh;
     background-color: rgba(0, 0, 0, 0.082);
     position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
 }
 
 .disco-jogador {

@@ -22,50 +22,8 @@ const vezJogador = document.createElement("section");
 vezJogador.id = "vezJogador";
 principal.appendChild(vezJogador)
 
-const grade = document.createElement("section");
-grade.id = "grade";
-principal.appendChild(grade);
-
-const datos = document.createElement("section");
-datos.id = "datos";
-principal.appendChild(datos);
-
-const starter = document.createElement("div");
-starter.className = "popup-comecarJogo";
-datos.appendChild(starter);
-
-const starterBtn = document.createElement("div");
-starterBtn.className = "popup-comecarJogo___botoes";
-starter.appendChild(starterBtn);
-
-const lblPlayer1 = document.createElement("label");
-lblPlayer1.setAttribute("for", "jogador1");
-lblPlayer1.innerText = "Digite o nome do Jogador 1: ";
-starterBtn.appendChild(lblPlayer1);
-
-const nomePlayer1 = document.createElement("input");
-nomePlayer1.type = "text";
-nomePlayer1.id = "jogador1";
-starterBtn.appendChild(nomePlayer1);
-
-const lblPlayer2 = document.createElement("label");
-lblPlayer2.setAttribute("for", "jogador2");
-lblPlayer2.innerText = "Digite o nome do Jogador 2: ";
-starterBtn.appendChild(lblPlayer2);
-
-const nomePlayer2 = document.createElement("input");
-nomePlayer2.type = "text";
-nomePlayer2.id = "jogador2";
-starterBtn.appendChild(nomePlayer2);
-
-const btnStart = document.createElement("button");
-btnStart.id = "iniciarJogo";
-btnStart.innerText = "Iniciar Jogo";
-starterBtn.appendChild(btnStart);
-
 let jogador1
 let jogador2
-
 document.querySelector("#iniciarJogo").addEventListener("click", pegarValue)
 const mensaje = document.createElement("h2");
 
@@ -85,6 +43,16 @@ function pegarValue() {
     div.style.display = "none"
 }
 
+
+
+
+const grade = document.createElement("section");
+grade.id = "grade";
+principal.appendChild(grade);
+
+const datos = document.createElement("section");
+datos.id = "datos";
+principal.appendChild(datos);
 
 let idColunas = ["a", "b", "c", "d", "e", "f", "g"]
 let cont = 1
@@ -107,27 +75,88 @@ function criarTabuleiro() {
 }
 criarTabuleiro()
 
-const btnReset = document.createElement("button");
-btnReset.type = "reset";
-btnReset.className = "reset";
-btnReset.id = "reset";
-btnReset.innerText = "Reset";
-datos.appendChild(btnReset);
 
-const victoryScreen = document.createElement("div");
-victoryScreen.className = "telaVitoria";
-victoryScreen.id = "telaVitoria";
-datos.appendChild(victoryScreen);
+/*
+function Celda(i, str) {
+    this.celda = document.createElement("div");
+    this.celda.id = i + 1;
+    this.celda.className = str;
+}
 
-const victoryLink = document.createElement("div");
-victoryLink.className = "linkVitoria";
-victoryScreen.appendChild(victoryLink);
+function Coluna(i, str) {
+    this.coluna = document.createElement("div");
+    this.coluna.id = String.fromCharCode(97 + i);
+    this.coluna.className = str;
+}
 
-const btnExit = document.createElement("button");
-btnExit.className = "sair";
-btnExit.innerText = "X";
-victoryLink.appendChild(btnExit);
+const colunas = [];
 
-const victoryMessage = document.createElement("h3");
-victoryMessage.id = "texto-vitoria";
-victoryLink.appendChild(victoryMessage);
+function criaColunas(n, str, array) {
+    for (let i = 0; i < n; i++) {
+        array[i] = new Coluna(i, str);
+    }
+    return array;
+}
+
+criaColunas(7, "coluna", colunas);
+
+function dibujaColunas(array, tag) {
+    for (let i = 0; i < array.length; i++) {
+        const element = array[i];
+        tag.appendChild(element.coluna);
+        element.coluna.addEventListener("click", criarDisco)
+    }
+}
+
+
+dibujaColunas(colunas, grade);
+
+const coluna01 = [];
+const coluna02 = [];
+const coluna03 = [];
+const coluna04 = [];
+const coluna05 = [];
+const coluna06 = [];
+const coluna07 = [];
+
+function criaCeldas(n, str, array) {
+    for (let i = n; i < n + 6; i++) {
+        array[i - n] = new Celda(i, str);
+    }
+    return array;
+}
+
+criaCeldas(0, "celda", coluna01);
+criaCeldas(6, "celda", coluna02);
+criaCeldas(12, "celda", coluna03);
+criaCeldas(18, "celda", coluna04);
+criaCeldas(24, "celda", coluna05);
+criaCeldas(30, "celda", coluna06);
+criaCeldas(36, "celda", coluna07);
+
+const colunaA = document.getElementById("a");
+const colunaB = document.getElementById("b");
+const colunaC = document.getElementById("c");
+const colunaD = document.getElementById("d");
+const colunaE = document.getElementById("e");
+const colunaF = document.getElementById("f");
+const colunaG = document.getElementById("g");
+
+function dibujaCeldas(array, tag) {
+    for (let i = 0; i < array.length; i++) {
+        const element = array[i];
+        tag.appendChild(element.celda);
+
+    }
+}
+
+
+dibujaCeldas(coluna01, colunaA);
+dibujaCeldas(coluna02, colunaB);
+dibujaCeldas(coluna03, colunaC);
+dibujaCeldas(coluna04, colunaD);
+dibujaCeldas(coluna05, colunaE);
+dibujaCeldas(coluna06, colunaF);
+dibujaCeldas(coluna07, colunaG);
+
+*/
