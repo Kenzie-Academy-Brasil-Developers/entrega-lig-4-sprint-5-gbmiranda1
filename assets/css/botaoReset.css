@@ -1,7 +1,12 @@
 .reset {
-    border: 1px solid black;
+    width: 60px;
+    height: 25px;
+    color: white;
+    font-size: 16px;
+    border: 1px solid var(--third-color);
+    background-color: var(--main-color);
     position: absolute;
-    right: 43vw;
+    right: 41.5vw;
     bottom: 20vh;
     cursor: pointer;
 }
@@ -9,7 +14,8 @@
 @media (min-width: 769px) {
     .reset {
         bottom: 10vh;
-        right: 48vw;
+        right: 46.5vw;
         font-size: 20px;
+        width: 110px;
     }
 }
