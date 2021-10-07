@@ -99,7 +99,7 @@ function verificarVitoriaDiagonal(i, j, vORp) {
             return true
         }
     }
-    if (i - 2 >= 0 && j + 2 < 7 && i + 1 < 6 && j - 1 >= 0) {
+    if (i - 2 >= 0 && j + 2 > 7 && i + 1 < 6 && j - 1 >= 0) {
         if (matrizJogo[i + 1][j - 1] == vORp && matrizJogo[i][j] == vORp && matrizJogo[i - 1][j + 1] == vORp && matrizJogo[i - 2][j + 2] == vORp) {
             mostrarMensagemVitoria(vORp, "diagonal")
             return true
