@@ -40,6 +40,7 @@
     background-color: var(--second-color);
     border-radius: px;
     cursor: pointer;
+    text-align: center;
 }
 
 .sair:hover {

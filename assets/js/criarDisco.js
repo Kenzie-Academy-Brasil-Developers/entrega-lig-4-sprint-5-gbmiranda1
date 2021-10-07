@@ -104,7 +104,11 @@ function reiniciar() {
     }
     jogador = true
     ganhou = false
-    mensaje.innerText = "Vez do jogador VERMELHO"
+    if (jogador1 != "") {
+        mensaje.innerText = "Vez de " + jogador1
+    } else {
+        mensaje.innerText = "Vez do jogador VERMELHO"
+    }
 }
 
 criarMatriz()

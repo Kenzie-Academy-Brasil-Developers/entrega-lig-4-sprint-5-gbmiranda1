@@ -15,15 +15,57 @@ const pie = document.createElement("footer");
 corpo.appendChild(pie);
 
 const pieLegenda = document.createElement("p");
-pieLegenda.innerText = "galubo q1 sprint 5";
+pieLegenda.innerText = "GaLuBo q1 sprint 5";
 pie.appendChild(pieLegenda);
 
 const vezJogador = document.createElement("section");
 vezJogador.id = "vezJogador";
 principal.appendChild(vezJogador)
 
+const grade = document.createElement("section");
+grade.id = "grade";
+principal.appendChild(grade);
+
+const datos = document.createElement("section");
+datos.id = "datos";
+principal.appendChild(datos);
+
+const starter = document.createElement("div");
+starter.className = "popup-comecarJogo";
+datos.appendChild(starter);
+
+const starterBtn = document.createElement("div");
+starterBtn.className = "popup-comecarJogo___botoes";
+starter.appendChild(starterBtn);
+
+const lblPlayer1 = document.createElement("label");
+lblPlayer1.setAttribute("for", "jogador1");
+lblPlayer1.innerText = "Digite o nome do Jogador 1: ";
+starterBtn.appendChild(lblPlayer1);
+
+const nomePlayer1 = document.createElement("input");
+nomePlayer1.type = "text";
+nomePlayer1.id = "jogador1";
+starterBtn.appendChild(nomePlayer1);
+
+const lblPlayer2 = document.createElement("label");
+lblPlayer2.setAttribute("for", "jogador2");
+lblPlayer2.innerText = "Digite o nome do Jogador 2: ";
+starterBtn.appendChild(lblPlayer2);
+
+const nomePlayer2 = document.createElement("input");
+nomePlayer2.type = "text";
+nomePlayer2.id = "jogador2";
+starterBtn.appendChild(nomePlayer2);
+
+const btnStart = document.createElement("button");
+btnStart.id = "iniciarJogo";
+btnStart.innerText = "Iniciar Jogo";
+starterBtn.appendChild(btnStart);
+
 let jogador1
 let jogador2
+
 document.querySelector("#iniciarJogo").addEventListener("click", pegarValue)
 const mensaje = document.createElement("h2");
 
@@ -43,16 +85,6 @@ function pegarValue() {
     div.style.display = "none"
 }
 
-
-
-
-const grade = document.createElement("section");
-grade.id = "grade";
-principal.appendChild(grade);
-
-const datos = document.createElement("section");
-datos.id = "datos";
-principal.appendChild(datos);
 
 let idColunas = ["a", "b", "c", "d", "e", "f", "g"]
 let cont = 1
