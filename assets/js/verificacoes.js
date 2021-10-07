@@ -21,25 +21,25 @@ function verificarVitoriaHorizontal(i, j, vORp) {
     const elemento = matrizJogo[i];
     if (j + 3 < 7) {
         if (elemento[j] === vORp && elemento[j + 1] === vORp && elemento[j + 2] === vORp && elemento[j + 3] === vORp) {
-            mostrarMensagemVitoria(vORp, "horizontal");
+            mostrarMensagemVitoria(vORp, "horizontal")
             return true;
         }
     }
     if (j - 1 >= 0 && j + 2 < 7) {
         if (elemento[j - 1] === vORp && elemento[j] === vORp && elemento[j + 1] === vORp && elemento[j + 2] === vORp) {
-            mostrarMensagemVitoria(vORp, "horizontal");
+            mostrarMensagemVitoria(vORp, "horizontal")
             return true;
         }
     }
     if (j - 2 >= 0 && j + 1 < 7) {
         if (elemento[j - 2] === vORp && elemento[j - 1] === vORp && elemento[j] === vORp && elemento[j + 1] === vORp) {
-            mostrarMensagemVitoria(vORp, "horizontal");
+            mostrarMensagemVitoria(vORp, "horizontal")
             return true;
         }
     }
     if (j - 3 >= 0) {
         if (elemento[j] === vORp && elemento[j - 1] === vORp && elemento[j - 2] === vORp && elemento[j - 3] === vORp) {
-            mostrarMensagemVitoria(vORp, "horizontal");
+            mostrarMensagemVitoria(vORp, "horizontal")
             return true;
         }
     }
@@ -101,7 +101,6 @@ function verificarVitoriaDiagonal(i, j, vORp) {
     }
     if (i - 2 >= 0 && j + 2 < 7 && i + 1 < 6 && j - 1 >= 0) {
         if (matrizJogo[i + 1][j - 1] == vORp && matrizJogo[i][j] == vORp && matrizJogo[i - 1][j + 1] == vORp && matrizJogo[i - 2][j + 2] == vORp) {
-            console.log("ganhei aqui")
             mostrarMensagemVitoria(vORp, "diagonal")
             return true
         }
