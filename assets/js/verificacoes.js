@@ -1,4 +1,3 @@
-/* VERIFICACAO HORIZONTAL*/
 function mostrarMensagemVitoria(vORp, direcao) {
     setTimeout(function() {
         if (vORp == "p") {
@@ -17,6 +16,7 @@ function mostrarMensagemVitoria(vORp, direcao) {
     }, 1000);
 }
 
+/* VERIFICACAO HORIZONTAL*/
 function verificarVitoriaHorizontal(i, j, vORp) {
     const elemento = matrizJogo[i];
     if (j + 3 < 7) {
@@ -99,7 +99,7 @@ function verificarVitoriaDiagonal(i, j, vORp) {
             return true
         }
     }
-    if (i - 2 >= 0 && j + 2 > 7 && i + 1 < 6 && j - 1 >= 0) {
+    if (i - 2 >= 0 && j + 2 < 7 && i + 1 < 6 && j - 1 >= 0) {
         if (matrizJogo[i + 1][j - 1] == vORp && matrizJogo[i][j] == vORp && matrizJogo[i - 1][j + 1] == vORp && matrizJogo[i - 2][j + 2] == vORp) {
             mostrarMensagemVitoria(vORp, "DIAGONAL")
             return true

@@ -100,7 +100,6 @@ main {
     width: 250px;
     height: 220px;
     padding: 10px;
-    z-index: 2;
 }
 
 @media (min-width: 769px) {
@@ -109,7 +108,7 @@ main {
     }
 }
 
-.jogador { 
+.jogador {
     color: white;
 }
 
@@ -149,6 +148,7 @@ main {
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.082);
     position: absolute;
+    z-index: 5;
 }
 
 .disco-jogador {

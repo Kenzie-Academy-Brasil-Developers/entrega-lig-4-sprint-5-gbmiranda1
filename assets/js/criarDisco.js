@@ -14,7 +14,6 @@ let dicionario = {
 
 
 function criarDisco(evt) {
-    console.log("entrei")
     let verifica = true
 
     for (let i = evt.currentTarget.children.length - 1; i >= 0; i--) {
