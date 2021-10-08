@@ -14,6 +14,7 @@ body {
     width: 100vw;
     height: 100vh;
     background-color: var(--main-color);
+    overflow: hidden;
 }
 
 header {
@@ -145,7 +146,7 @@ main {
     background-color: rgba(0, 0, 0, 0.082);
     position: absolute;
     left: 50%;
-    top: 50%;
+    top: 47.5%;
     transform: translate(-50%, -50%);
     z-index: 5;
 }
